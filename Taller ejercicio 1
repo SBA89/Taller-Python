@@ -1,37 +1,28 @@
-var_controlBln = True
-while var_controlBln == True:
-    var_opcionStr =int(input('- - Seleccione los números - -\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31. SALIR \n->'))
-    if var_opcionStr == 31:
-        var_controlBln = False
-if var_opcionStr == 1:
-    print('Este número no esta dentro del rango')
-if var_opcionStr == 2:
-    print('Este número no esta dentro del rango')
-if var_opcionStr == 3:
-    print('Este número no esta dentro del rango')
-if var_opcionStr == 4:
-    print('Este número no esta dentro del rango')
-    
-if var_opcionStr == 10:
-    print('El número 16 esta dentro del rango')
-if var_opcionStr == 11:
-    print('El número 16 esta dentro del rango')
-if var_opcionStr == 12:
-    print('El número 16 esta dentro del rango')
-if var_opcionStr == 13:
-    print('El número 16 esta dentro del rango') 
-if var_opcionStr == 14:
-    print('El número 16 esta dentro del rango')
-if var_opcionStr == 15:
-    print('El número 15 esta dentro del rango')
-if var_opcionStr == 16:
-    print('El número 16 esta dentro del rango')
-if var_opcionStr == 17:
-    print('El número 16 esta dentro del rango')
-if var_opcionStr == 18:
-    print('El número 16 esta dentro del rango')
-if var_opcionStr == 19:
-    print('El número 16 esta dentro del rango')
-if var_opcionStr == 20:
-    print('El número 16 esta dentro del rango')
-var_numerosInt = int(input("La cantidad de números que estan dentro del rango son: ",{var_opcionStr} ))
+def contar_numeros_en_rango(numeros):
+    numeros_en_rango = 0
+
+    for var_numero in numeros:
+        if 10 <= var_numero <= 20:
+            numeros_en_rango += 1
+
+    return numeros_en_rango
+
+def main():
+    try:
+        n = int(input("Ingrese la cantidad de números a capturar: "))
+
+        numeros = []
+
+        for i in range(n):
+            var_numero = float(input(f"Ingrese el número {i + 1}: "))
+            numeros.append(var_numero)
+
+        numeros_en_rango = contar_numeros_en_rango(numeros)
+
+        print(f"\nCantidad de números en el rango de 10 a 20: {numeros_en_rango}")
+
+    except ValueError:
+        print("Error: Ingrese un valor numérico válido.")
+
+if __name__ == "__main__":
+    main()
